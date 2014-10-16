@@ -2,3 +2,5 @@ javac src\test\java\is\ru\Stringcalculator2\*.java
 
 keyra compile draslið
 sh .\bin\build...
+
+git commit -m "compile"

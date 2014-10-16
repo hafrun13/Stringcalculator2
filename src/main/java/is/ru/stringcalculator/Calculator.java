@@ -9,10 +9,16 @@ public class Calculator {
 		else if(text.contains(",")){
 			return sum(splitNumbers(text));
 		}
+		else if(text.contains("\n")){
+			return sum(splitNewLines(text));
+		}
 		else
 			return 1;
 	}
 
+	private static String[] splitNewLines(String numbers) {
+		return numbers.split("\n");
+	}
 	private static int toInt(String number){
 		return Integer.parseInt(number);
 	}
