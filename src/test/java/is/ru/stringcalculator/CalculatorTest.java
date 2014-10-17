@@ -40,8 +40,19 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testDelimeter() {
+	public void testDelimiter() {
 		assertEquals(3, Calculator.add("1;2"));
 	}
+
+	@Test(expected = Exception.class)
+	public void test_function_negative() {
+    	try {
+        	Calculator.add("-1");
+    	} 
+    	catch (Exception ex) {
+        	assertEquals("Negatives not allowed: ",(Calculator.add("-1")), ex.getMessage());
+        	throw ex;
+    }
+}
 
 }
