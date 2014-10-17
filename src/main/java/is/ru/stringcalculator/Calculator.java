@@ -6,6 +6,9 @@ public class Calculator {
 		if(text.contains("\n") && text.contains(",")) {
 			return sum(splitMultiple(text));
 		}
+		else if(text.contains(";")) {
+			return sum(splitDelimeter(text));
+		}
 		else if(text.equals("")){
 			return 0;
 		}
@@ -20,8 +23,12 @@ public class Calculator {
 	}
 	private static String[] splitMultiple(String numbers) {
     	String splitter = "[\n,]+";
+
     	String[] simbols = numbers.split(splitter);
     		return simbols;
+    }
+    private static String[] splitDelimeter(String numbers) {
+    	return numbers.split(";");
     }
 
 	private static String[] splitNewLines(String numbers) {
