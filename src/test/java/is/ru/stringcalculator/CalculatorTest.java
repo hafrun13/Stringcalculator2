@@ -32,6 +32,12 @@ public class CalculatorTest {
 	@Test
 	public void testNewLines() {
 		assertEquals(3, Calculator.add("1\n2"));
-	}   
+	}
+
+	@Test
+	public void testMultipleNewLines() {
+		assertEquals(6, Calculator.add("1\n2,3"));
+	}
+
 
 }
