@@ -43,6 +43,7 @@ public class CalculatorTest {
 	public void testDelimiter() {
 		assertEquals(3, Calculator.add("//;1;2"));
 	}
+	
 	@Test
 	public void testToHigh() {
 		assertEquals(2, Calculator.add("1001,2"));
@@ -51,12 +52,17 @@ public class CalculatorTest {
 	@Test(expected = Exception.class)
 	public void test_function_negative() {
     	try {
-        	Calculator.add("-1");
+        	Calculator.add("-1,2");
     	} 
     	catch (Exception ex) {
-        	assertEquals("Negatives not allowed: ",(Calculator.add("-1")), ex.getMessage());
+        	assertEquals("Negatives not allowed: -1", ex.getMessage());
         	throw ex;
-    }
-}
+    	}
+	}
+	/*
+	@Test
+    public void testManyNumbers() {
+    	assertEquals(6, Calculator.add("//[***]\n1***2***3"));
+    }*/
 
 }
