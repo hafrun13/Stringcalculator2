@@ -24,6 +24,7 @@ public class Calculator {
 		else if(Integer.parseInt(text) < 0) {
 			return toInt(negative(text));
 		}
+
 		else
 			return 1;
 	}
@@ -54,7 +55,12 @@ public class Calculator {
     private static int sum(String[] numbers){
  	    int total = 0;
         for(String number : numbers){
-		    total += toInt(number);
+        	if(toInt(number) > 999) {
+        		total = 0;
+        	}
+        	else {
+        		total += toInt(number);
+        	}
 		}
 		return total;
     }

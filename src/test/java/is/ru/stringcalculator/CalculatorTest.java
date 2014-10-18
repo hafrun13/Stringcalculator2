@@ -43,6 +43,10 @@ public class CalculatorTest {
 	public void testDelimiter() {
 		assertEquals(3, Calculator.add("//;1;2"));
 	}
+	@Test
+	public void testToHigh() {
+		assertEquals(2, Calculator.add("1001,2"));
+	}
 
 	@Test(expected = Exception.class)
 	public void test_function_negative() {
