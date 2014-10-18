@@ -1,5 +1,6 @@
 package is.ru.stringcalculator;
 import java.util.regex.Pattern;
+import java.util.Arrays;
 
 public class Calculator {
 
@@ -7,13 +8,10 @@ public class Calculator {
 		if(text.contains("\n") && text.contains(",")) {
 			return sum(splitMultiple(text));
 		}
-		else if(text.contains(";")) {
+		else if(text.startsWith("//;")) {
 			return sum(splitDelimiter(text));
 		}
-		else if(text.contains("//")) {
-			System.out.println("Sorry tetta ma ekki");
-			return -1;
-		}
+		
 		else if(text.equals("")){
 			return 0;
 		}
@@ -40,9 +38,11 @@ public class Calculator {
 	}
     
     private static String[] splitDelimiter(String numbers) {
-    	return numbers.split(";");
+		String start = numbers.substring(numbers.indexOf("//") + 3);
+		String splitter = "[;]+";
+		String[] newString = start.split(splitter);
+			return  newString;
     }
-
 	private static int toInt(String number){
 		return Integer.parseInt(number);
 	}

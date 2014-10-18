@@ -41,7 +41,7 @@ public class CalculatorTest {
 
 	@Test
 	public void testDelimiter() {
-		assertEquals(3, Calculator.add("1;2"));
+		assertEquals(3, Calculator.add("//;1;2"));
 	}
 
 	@Test(expected = Exception.class)

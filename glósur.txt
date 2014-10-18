@@ -10,3 +10,25 @@ git commit -m "compile"
 
 http://pages.cs.wisc.edu/~hasti/cs302/examples/Parsing/parseString.html
 
+import java.util.regex.Pattern;
+
+String splitter = "[//]+";
+
+
+else if(text.contains("//")) {
+			System.out.println("Sorry tetta ma ekki");
+			return -1;
+		}
+
+return numbers.split(";");
+
+String splitter = "[;]+";
+    	String[] simbols = numbers.split(splitter);
+    		return simbols;
+
+if(numbers.startsWith(";", 3));
+
+numbers.substring(3, 6);
+		String splitter = "[;]+";
+		String[] simbols = numbers.split(splitter);
+			return simbols;
