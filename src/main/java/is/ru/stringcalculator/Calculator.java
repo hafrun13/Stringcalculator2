@@ -1,6 +1,7 @@
 package is.ru.stringcalculator;
 import java.util.regex.Pattern;
 import java.util.Arrays;
+import static java.lang.System.out;
 
 public class Calculator {
 
@@ -20,9 +21,9 @@ public class Calculator {
 		else if(text.contains("\n")){
 			return sum(splitNewLines(text));
 		}
-		/*else if(text.contains("//[***]\n")) {
+		else if(text.startsWith("//[***]\n")) {
 			return sum(splitManyNumbers(text));
-		}*/
+		}
 
 		else
 			return 1;
@@ -33,6 +34,7 @@ public class Calculator {
     	String[] simbols = numbers.split(splitter);
     		return simbols;
     }
+    
     private static String[] splitNewLines(String numbers) {
 		return numbers.split("\n");
 	}
@@ -43,13 +45,13 @@ public class Calculator {
 		String[] newString = start.split(splitter);
 			return  newString;
     }
-/*
+
     private static String[] splitManyNumbers(String numbers) {
-    	String start = numbers.substring(numbers.indexOf("//") + 3);
-		String splitter = "[[***]\n]+";
+    	String start = numbers.substring(9);
+		String splitter = "[***]+";
 		String[] newString = start.split(splitter);
 			return  newString;
-    }*/
+    }
 
 	private static int toInt(String number){
 		return Integer.parseInt(number);
@@ -62,7 +64,7 @@ public class Calculator {
     private static int sum(String[] numbers){
  	    int total = 0;
         for(String number : numbers){
-        	if(toInt(number) > 999) {
+        	if(toInt(number) > 1000) {
         		total = 0;
         	}
         	else if(toInt(number) < 0) {

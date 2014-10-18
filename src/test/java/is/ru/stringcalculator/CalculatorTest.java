@@ -2,6 +2,7 @@ package is.ru.stringcalculator;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import java.util.regex.Pattern;
 
 public class CalculatorTest {
 
@@ -64,5 +65,5 @@ public class CalculatorTest {
     public void testManyNumbers() {
     	assertEquals(6, Calculator.add("//[***]\n1***2***3"));
     }*/
-
+	
 }
